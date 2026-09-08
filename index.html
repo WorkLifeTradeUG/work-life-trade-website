@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Work Life Trade UG – Handel, Technik, Energie & Maschinen</title>
+
+    <meta name="description"
+          content="Work Life Trade UG – Handel mit elektrischen Geräten, Photovoltaikanlagen, Bau- und Industriemaschinen sowie Import und Export.">
+
+    <meta name="keywords"
+          content="Work Life Trade UG, Photovoltaik, Elektrogeräte, Baumaschinen, Maschinenvermietung, Import Export">
+
+    <meta name="author" content="Work Life Trade UG">
+
+    <style>
+        :root {
+            --green: #0d3b2e;
+            --green-dark: #08281f;
+            --green-light: #174f3d;
+            --gold: #c9a45c;
+            --gold-light: #dfc47f;
+            --white: #ffffff;
+            --light: #f4f5f2;
+            --gray: #68716d;
+            --dark: #17201d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 40, 31, 0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 164, 92, 0.25);
+        }
+
+        nav {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            height: 58px;
+        }
+
+        .logo-svg {
+            width: 270px;
+            height: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .menu-toggle {
+            display: none;
+            border: none;
+            background: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 78px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(201, 164, 92, 0.16),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--green-dark),
+                    var(--green)
+                );
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(201, 164, 92, 0.12);
+            border-radius: 50%;
+            right: -180px;
+            bottom: -180px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            color: white;
+        }
+
+        .eyebrow {
+            color: var(--gold-light);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 78px);
+            line-height: 1.03;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 19px;
+            color: rgba(255,255,255,0.82);
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--green-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            color: white;
+            border: 1px solid rgba(255,255,255,0.45);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold-light);
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        section {
+            padding: 95px 0;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 55px;
+        }
+
+        .section-heading .eyebrow {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(32px, 4vw, 50px);
+            line-height: 1.1;
+            margin-bottom: 18px;
+            color: var(--green-dark);
+        }
+
+        .section-heading p {
+            color: var(--gray);
+            font-size: 17px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: var(--light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .about-box {
+            background: var(--green);
+            color: white;
+            padding: 45px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-box::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(201,164,92,0.3);
+            border-radius: 50%;
+            right: -70px;
+            top: -70px;
+        }
+
+        .about-box h3 {
+            color: var(--gold-light);
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .about-box p {
+            color: rgba(255,255,255,0.78);
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            padding: 35px;
+            border: 1px solid #e1e5e1;
+            border-radius: 7px;
+            background: white;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(13,59,46,0.10);
+        }
+
+        .service-number {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 {
+            color: var(--green);
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            background: var(--green);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: clamp(32px, 5vw, 55px);
+            margin-bottom: 18px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: rgba(255,255,255,0.78);
+            font-size: 17px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: var(--light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 7px;
+            border: 1px solid #e2e6e3;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--green);
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--gold);
+        }
+
+        /* =========================
+           LEGAL
+        ========================= */
+
+        .legal {
+            background: white;
+        }
+
+        .legal-box {
+            max-width: 900px;
+        }
+
+        .legal-box h3 {
+            color: var(--green);
+            margin: 35px 0 10px;
+        }
+
+        .legal-box h3:first-child {
+            margin-top: 0;
+        }
+
+        .legal-box p {
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--green-dark);
+            color: rgba(255,255,255,0.65);
+            padding: 35px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .footer-brand {
+            color: white;
+            font-weight: 700;
+        }
+
+        .footer-gold {
+            color: var(--gold);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 78px;
+                left: 0;
+                width: 100%;
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                background: var(--green-dark);
+                border-top: 1px solid rgba(201,164,92,0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 16px 4%;
+                border-bottom: 1px solid rgba(255,255,255,0.06);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .logo-svg {
+                width: 220px;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .about-box,
+            .service-card,
+            .contact-card {
+                padding: 28px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+
+            <!-- LOGO -->
+            <a href="#start" class="logo" aria-label="Work Life Trade UG – Startseite">
+
+                <svg
+                    class="logo-svg"
+                    viewBox="0 0 420 100"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    aria-label="Work Life Trade UG"
+                >
+
+                    <!-- Symbol -->
+                    <g transform="translate(8 8)">
+
+                        <!-- Außenring -->
+                        <circle
+                            cx="42"
+                            cy="42"
+                            r="35"
+                            fill="none"
+                            stroke="#C9A45C"
+                            stroke-width="3"
+                        />
+
+                        <!-- Sonne -->
+                        <circle
+                            cx="42"
+                            cy="42"
+                            r="11"
+                            fill="#C9A45C"
+                        />
+
+                        <!-- Sonnenstrahlen -->
+                        <g
+                            stroke="#C9A45C"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                        >
+                            <line x1="42" y1="3" x2="42" y2="12"/>
+                            <line x1="42" y1="72" x2="42" y2="81"/>
+                            <line x1="3" y1="42" x2="12" y2="42"/>
+                            <line x1="72" y1="42" x2="81" y2="42"/>
+                            <line x1="14" y1="14" x2="20" y2="20"/>
+                            <line x1="64" y1="64" x2="70" y2="70"/>
+                            <line x1="70" y1="14" x2="64" y2="20"/>
+                            <line x1="20" y1="64" x2="14" y2="70"/>
+                        </g>
+
+                        <!-- Industrielles / technisches Element -->
+                        <path
+                            d="M24 58 L34 34 L60 34 L69 58 Z"
+                            fill="#0D3B2E"
+                            stroke="#0D3B2E"
+                            stroke-width="2"
+                        />
+
+                        <!-- Solar-/Technik-Linien -->
+                        <path
+                            d="M30 51 L63 51
+                               M33 43 L60 43
+                               M36 36 L39 58
+                               M47 36 L50 58
+                               M57 36 L60 58"
+                            fill="none"
+                            stroke="#FFFFFF"
+                            stroke-width="2"
+                            opacity="0.9"
+                        />
+
+                        <!-- Energieblitz -->
+                        <path
+                            d="M48 25 L37 44 H45 L39 60 L55 39 H47 Z"
+                            fill="#C9A45C"
+                        />
+
+                    </g>
+
+                    <!-- Firmenname -->
+                    <text
+                        x="105"
+                        y="48"
+                        font-family="Arial, Helvetica, sans-serif"
+                        font-size="28"
+                        font-weight="700"
+                        letter-spacing="2"
+                        fill="#FFFFFF"
+                    >
+                        WORK LIFE TRADE
+                    </text>
+
+                    <!-- UG -->
+                    <text
+                        x="107"
+                        y="73"
+                        font-family="Arial, Helvetica, sans-serif"
+                        font-size="14"
+                        font-weight="600"
+                        letter-spacing="4"
+                        fill="#C9A45C"
+                    >
+                        UG
+                    </text>
+
+                    <!-- Unterlinie -->
+                    <line
+                        x1="105"
+                        y1="82"
+                        x2="395"
+                        y2="82"
+                        stroke="#C9A45C"
+                        stroke-width="1"
+                        opacity="0.6"
+                    />
+
+                </svg>
+
+            </a>
+
+            <button class="menu-toggle"
+                    aria-label="Menü öffnen"
+                    onclick="toggleMenu()">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#start">Startseite</a></li>
+                <li><a href="#unternehmen">Über uns</a></li>
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#impressum">Impressum</a></li>
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
+
+<!-- =========================
+     START
+========================= -->
+
+<section class="hero" id="start">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Work Life Trade UG
+            </div>
+
+            <h1>
+                Handel.<br>
+                Technik.<br>
+                <span>Energie & Maschinen.</span>
+            </h1>
+
+            <p>
+                Ihr zuverlässiger Partner für elektrische Geräte,
+                Photovoltaik, Bau- und Industriemaschinen sowie
+                internationalen Handel.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#kontakt" class="btn btn-primary">
+                    Kontakt aufnehmen
+                </a>
+
+                <a href="#leistungen" class="btn btn-outline">
+                    Leistungen entdecken
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ÜBER UNS
+========================= -->
+
+<section class="about" id="unternehmen">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Über uns
+            </div>
+
+            <h2>
+                Handel mit Weitblick.
+            </h2>
+
+            <p>
+                Work Life Trade UG verbindet Handel, Technik,
+                Energie und Maschinen unter einem Dach.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    Wir sind ein vielseitig aufgestelltes Unternehmen
+                    mit Fokus auf den Import und Export sowie den
+                    Handel mit technischen Produkten und Maschinen.
+                </p>
+
+                <p>
+                    Ein weiterer Schwerpunkt liegt auf der
+                    Distribution und Installation von
+                    Photovoltaikanlagen.
+                </p>
+
+                <p>
+                    Darüber hinaus bieten wir Bau- und
+                    Industriemaschinen zum Verkauf und zur
+                    Vermietung an.
+                </p>
+
+                <p>
+                    Unser Anspruch ist eine zuverlässige,
+                    partnerschaftliche und lösungsorientierte
+                    Zusammenarbeit.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <h3>
+                    Technik trifft Energie.
+                </h3>
+
+                <p>
+                    Von elektrischen Geräten über moderne
+                    Photovoltaiklösungen bis hin zu
+                    leistungsfähigen Maschinen:
+                    Wir schaffen Verbindungen zwischen Produkten,
+                    Märkten und Kunden.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LEISTUNGEN
+========================= -->
+
+<section id="leistungen">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Unsere Leistungen
+            </div>
+
+            <h2>
+                Vier Bereiche. Ein Partner.
+            </h2>
+
+            <p>
+                Unser Leistungsportfolio verbindet technischen
+                Handel, erneuerbare Energien und Maschinen.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    01 — ELEKTROTECHNIK
+                </div>
+
+                <h3>
+                    Elektrische Geräte
+                </h3>
+
+                <p>
+                    Import, Export und Handel mit elektrischen
+                    Geräten und technischen Produkten für
+                    unterschiedliche Einsatzbereiche.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    02 — PHOTOVOLTAIK
+                </div>
+
+                <h3>
+                    Solar & Energie
+                </h3>
+
+                <p>
+                    Distribution und Installation von
+                    Photovoltaikanlagen – für eine moderne und
+                    nachhaltige Energieversorgung.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    03 — MASCHINEN
+                </div>
+
+                <h3>
+                    Bau- & Industriemaschinen
+                </h3>
+
+                <p>
+                    Verkauf und Vermietung von Bau- und
+                    Industriemaschinen für professionelle
+                    Anwendungen.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    04 — HANDEL
+                </div>
+
+                <h3>
+                    Import & Export
+                </h3>
+
+                <p>
+                    Internationale Handelsbeziehungen,
+                    Produktbeschaffung und zuverlässige
+                    Geschäftsabwicklung.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Sie haben ein Projekt?
+        </h2>
+
+        <p>
+            Sprechen Sie mit uns über Ihre Anforderungen,
+            Produkte oder geplanten Projekte.
+        </p>
+
+        <a href="#kontakt" class="btn btn-primary">
+            Jetzt Kontakt aufnehmen
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     KONTAKT
+========================= -->
+
+<section class="contact" id="kontakt">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Kontakt
+            </div>
+
+            <h2>
+                Wir freuen uns auf Ihre Anfrage.
+            </h2>
+
+            <p>
+                Kontaktieren Sie uns gerne direkt per E-Mail
+                oder auf dem Postweg.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <div class="contact-item">
+
+                    <strong>
+                        Unternehmen
+                    </strong>
+
+                    Work Life Trade UG
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        Geschäftsführer
+                    </strong>
+
+                    Jean Reich
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        E-Mail
+                    </strong>
+
+                    <a href="mailto:work-life-trade@web.de">
+                        work-life-trade@web.de
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-item">
+
+                    <strong>
+                        Geschäftsadresse
+                    </strong>
+
+                    Perwenitzer Dorfstraße 44<br>
+                    14621 Schönwalde-Glien<br>
+                    Deutschland
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        Handelsregister
+                    </strong>
+
+                    HRB 37022 P<br>
+                    Amtsgericht Potsdam
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     IMPRESSUM
+========================= -->
+
+<section class="legal" id="impressum">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Rechtliches
+            </div>
+
+            <h2>
+                Impressum
+            </h2>
+
+        </div>
+
+
+        <div class="legal-box">
+
+            <h3>
+                Angaben gemäß § 5 TMG
+            </h3>
+
+            <p>
+                Work Life Trade UG
+            </p>
+
+            <p>
+                Perwenitzer Dorfstraße 44<br>
+                14621 Schönwalde-Glien<br>
+                Deutschland
+            </p>
+
+
+            <h3>
+                Vertreten durch
+            </h3>
+
+            <p>
+                Geschäftsführer: Jean Reich
+            </p>
+
+
+            <h3>
+                Kontakt
+            </h3>
+
+            <p>
+                E-Mail:
+                <a href="mailto:work-life-trade@web.de">
+                    work-life-trade@web.de
+                </a>
+            </p>
+
+
+            <h3>
+                Registereintrag
+            </h3>
+
+            <p>
+                Eintragung im Handelsregister
+            </p>
+
+            <p>
+                Registergericht: Amtsgericht Potsdam<br>
+                Registernummer: HRB 37022 P
+            </p>
+
+
+            <h3>
+                Umsatzsteuer-ID
+            </h3>
+
+            <p>
+                Umsatzsteuer-Identifikationsnummer gemäß
+                § 27 a Umsatzsteuergesetz:
+            </p>
+
+            <p>
+                DE355221527
+            </p>
+
+
+            <h3>
+                Hinweis
+            </h3>
+
+            <p>
+                Die auf dieser Website bereitgestellten Informationen
+                dienen der allgemeinen Information. Änderungen und
+                Irrtümer vorbehalten.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DATENSCHUTZ
+========================= -->
+
+<section class="legal" id="datenschutz">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Rechtliches
+            </div>
+
+            <h2>
+                Datenschutz
+            </h2>
+
+        </div>
+
+
+        <div class="legal-box">
+
+            <h3>
+                Allgemeine Hinweise
+            </h3>
+
+            <p>
+                Der Schutz Ihrer persönlichen Daten ist uns wichtig.
+                Wir behandeln Ihre personenbezogenen Daten vertraulich
+                und entsprechend den gesetzlichen Datenschutzvorschriften.
+            </p>
+
+
+            <h3>
+                Kontaktaufnahme
+            </h3>
+
+            <p>
+                Wenn Sie uns per E-Mail kontaktieren, werden die von
+                Ihnen übermittelten Angaben zur Bearbeitung Ihrer
+                Anfrage verarbeitet.
+            </p>
+
+
+            <h3>
+                Hosting
+            </h3>
+
+            <p>
+                Beim Besuch dieser Website können technisch notwendige
+                Daten verarbeitet werden, die für die Bereitstellung
+                und Sicherheit der Website erforderlich sind.
+            </p>
+
+
+            <h3>
+                Keine unnötigen Tracking-Dienste
+            </h3>
+
+            <p>
+                Diese Website verwendet in dieser Version keine
+                eingebetteten Analyse- oder Werbetracking-Dienste.
+            </p>
+
+
+            <h3>
+                Ihre Rechte
+            </h3>
+
+            <p>
+                Sie haben im Rahmen der gesetzlichen Vorschriften
+                insbesondere das Recht auf Auskunft, Berichtigung,
+                Löschung und Einschränkung der Verarbeitung Ihrer
+                personenbezogenen Daten.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-inner">
+
+            <div>
+                <span class="footer-brand">
+                    Work Life Trade UG
+                </span>
+                <br>
+                Handel. Technik. Energie & Maschinen.
+            </div>
+
+            <div>
+                © 2026 Work Life Trade UG
+            </div>
+
+            <div>
+                <a href="#impressum">Impressum</a>
+                &nbsp; | &nbsp;
+                <a href="#datenschutz">Datenschutz</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+
+        const nav = document.getElementById("navLinks");
+
+        nav.classList.toggle("active");
+
+    }
+
+
+    // Mobile Menü nach Klick auf einen Link schließen
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("active");
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+</html>
+So bekommst du die Website online
