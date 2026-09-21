@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DLECTABI – Das Leben ein bisschen angenehmer</title>
+
+<meta name="description" content="DLECTABI – praktische Helfer, clevere Ideen und kleine Entdeckungen für einen leichteren Alltag. Haushalt, Ordnung, Küche und clevere Alltagshelfer.">
+
+<style>
+:root {
+    --green: #6f9b78;
+    --green-dark: #42694d;
+    --green-light: #eaf3ec;
+    --pink: #f5dfe3;
+    --pink-dark: #c98291;
+    --cream: #fffaf4;
+    --yellow: #f7e7a8;
+    --text: #30352f;
+    --white: #ffffff;
+    --shadow: 0 8px 25px rgba(60, 80, 60, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HEADER */
+
+.hero {
+    background: linear-gradient(135deg, #edf5ed, #fff4f0);
+    text-align: center;
+    padding: 55px 20px 45px;
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+}
+
+.claim {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--pink-dark);
+    margin-bottom: 18px;
+}
+
+.hero-text {
+    max-width: 620px;
+    margin: 0 auto 28px;
+    font-size: 17px;
+}
+
+.main-button {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+    transition: 0.2s;
+}
+
+.main-button:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+/* NAVIGATION */
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255,250,244,0.96);
+    border-bottom: 1px solid #eee4da;
+    padding: 12px 10px;
+    text-align: center;
+}
+
+.nav a {
+    display: inline-block;
+    margin: 4px 7px;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-dark);
+}
+
+.nav a:hover {
+    background: var(--green-light);
+}
+
+/* CONTENT */
+
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 45px 18px;
+}
+
+.section {
+    margin-bottom: 55px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 28px;
+    color: #666;
+}
+
+/* PRODUCT GRID */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.product {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s;
+    border: 1px solid #f1ebe4;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+}
+
+.product-icon {
+    font-size: 43px;
+    margin-bottom: 8px;
+}
+
+.product h3 {
+    margin: 0 0 8px;
+    color: var(--green-dark);
+    font-size: 20px;
+}
+
+.product p {
+    margin: 0 0 18px;
+    color: #5f625e;
+    font-size: 15px;
+    flex-grow: 1;
+}
+
+.product-button {
+    display: block;
+    text-align: center;
+    background: var(--green);
+    color: white;
+    padding: 11px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.product-button:hover {
+    background: var(--green-dark);
+}
+
+/* NEW PRODUCTS */
+
+.new-section {
+    background: var(--green-light);
+    border-radius: 28px;
+    padding: 35px 25px;
+}
+
+.new-badge {
+    display: inline-block;
+    background: var(--pink);
+    color: var(--pink-dark);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* TIP */
+
+.tip {
+    background: linear-gradient(135deg, #fff4d4, #fff9eb);
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.tip h2 {
+    color: #806b29;
+    margin-top: 0;
+}
+
+/* ABOUT */
+
+.about {
+    background: white;
+    border-radius: 25px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.about h2 {
+    color: var(--green-dark);
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--green-dark);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: white;
+    font-weight: bold;
+}
+
+.affiliate {
+    max-width: 760px;
+    margin: 20px auto 0;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo {
+        font-size: 35px;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .hero {
+        padding: 42px 18px 35px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .claim {
+        font-size: 18px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 32px 14px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .new-section {
+        padding: 25px 15px;
+    }
+
+    .about {
+        padding: 25px 18px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="logo">DLECTABI ✨</div>
+
+    <div class="claim">
+        Das Leben ein bisschen angenehmer.
+    </div>
+
+    <p class="hero-text">
+        Praktische Helfer, clevere Ideen und kleine Entdeckungen
+        für einen leichteren Alltag.
+    </p>
+
+    <a href="#neu" class="main-button">
+        🛒 Meine aktuellen Empfehlungen
+    </a>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav class="nav">
+
+    <a href="#neu">🔥 Neu entdeckt</a>
+    <a href="#haushalt">🏠 Haushalt</a>
+    <a href="#ordnung">🧺 Ordnung</a>
+    <a href="#kueche">🍳 Küche</a>
+    <a href="#alltag">💡 Alltag</a>
+
+</nav>
+
+
+<main class="container">
+
+
+<!-- NEU ENTDECKT -->
+
+<section class="section new-section" id="neu">
+
+    <h2 class="section-title">
+        🔥 Neu entdeckt
+    </h2>
+
+    <p class="section-subtitle">
+        Kleine Helfer und interessante Produkte, die den Alltag
+        ein bisschen angenehmer machen können.
+    </p>
+
+
+    <div class="products">
+
+
+        <!-- PRODUKT 1 -->
+
+        <article class="product">
+
+            <div class="product-icon">🧹</div>
+
+            <span class="new-badge">AKTUELL</span>
+
+            <h3>Cleverer Staubwedel</h3>
+
+            <p>
+                Praktischer Helfer für Staub an schwer erreichbaren
+                Stellen im Zuhause.
+            </p>
+
+            <a
+                href="https://link.amazon/B03zqZy1r"
+                class="product-button"
+                target="_blank"
+                rel="nofollow sponsored noopener">
+                🛒 Produkt ansehen
+            </a>
+
+        </article>
+
+
+        <!-- PRODUKT 2 -->
+
+        <article class="product">
+
+            <div class="product-icon">🚽</div>
+
+            <span class="new-badge">AKTUELL</span>
+
+            <h3>Bimsstein-Reiniger</h3>
+
+            <p>
+                Praktischer Helfer für hartnäckige Ablagerungen
+                an geeigneten Oberflächen.
+            </p>
+
+            <a
+                href="#"
+                class="product-button">
+                🛒 Produkt ansehen
+            </a>
+
+        </article>
+
+
+        <!-- PRODUKT 3 -->
+
+        <article class="product">
+
+            <div class="product-icon">🚿</div>
+
+            <span class="new-badge">AKTUELL</span>
+
+            <h3>Haarsieb für den Abfluss</h3>
+
+            <p>
+                Kleine Lösung, um Haare aufzufangen und den
+                Abfluss leichter sauber zu halten.
+            </p>
+
+            <a
+                href="#"
+                class="product-button">
+                🛒 Produkt ansehen
+            </a>
+
+        </article>
+
+
+        <!-- PRODUKT 4 -->
+
+        <article class="product">
+
+            <div class="product-icon">🍞</div>
+
+            <span class="new-badge">AKTUELL</span>
+
+            <h3>Klappbarer Brotschneider</h3>
+
+            <p>
+                Praktische Schneidemaschine mit platzsparendem
+                Klappmechanismus.
+            </p>
+
+            <a
+                href="#"
+                class="product-button">
+                🛒 Produkt ansehen
+            </a>
+
+        </article>
+
+
+        <!-- PRODUKT 5 -->
+
+        <article class="product">
+
+            <div class="product-icon">🍳</div>
+
+            <span class="new-badge">AKTUELL</span>
+
+            <h3>Kompakte Dunstabzugshaube</h3>
+
+            <p>
+                Interessante Lösung für kleinere Küchen und
+                begrenzten Platz.
+            </p>
+
+            <a
+                href="#"
+                class="product-button">
+                🛒 Produkt ansehen
+            </a>
+
+        </article>
+
+
+        <!-- PRODUKT 6 -->
+
+        <article class="product">
+
+            <div class="product-icon">🧽</div>
+
+            <span class="new-badge">AKTUELL</span>
+
+            <h3>Schmutzradierer</h3>
+
+            <p>
+                Praktischer kleiner Helfer für viele sichtbare
+                Verschmutzungen im Haushalt.
+            </p>
+
+            <a
+                href="#"
+                class="product-button">
+                🛒 Produkt ansehen
+            </a>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- HAUSHALT -->
+
+<section class="section" id="haushalt">
+
+    <h2 class="section-title">
+        🏠 Haushalt
+    </h2>
+
+    <p class="section-subtitle">
+        Kleine Helfer, die alltägliche Aufgaben einfacher machen.
+    </p>
+
+    <div class="products">
+
+        <article class="product">
+            <div class="product-icon">🧹</div>
+            <h3>Staub & Reinigung</h3>
+            <p>
+                Helfer für Staub, Schmutz und schwer erreichbare Stellen.
+            </p>
+            <a href="https://link.amazon/B03zqZy1r"
+               class="product-button"
+               target="_blank"
+               rel="nofollow sponsored noopener">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+        <article class="product">
+            <div class="product-icon">🧽</div>
+            <h3>Schmutzradierer</h3>
+            <p>
+                Kleine Helfer für sichtbare Verschmutzungen.
+            </p>
+            <a href="#"
+               class="product-button">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+        <article class="product">
+            <div class="product-icon">🧼</div>
+            <h3>Dampfreiniger</h3>
+            <p>
+                Praktischer Helfer für verschiedene Reinigungsaufgaben.
+            </p>
+            <a href="#"
+               class="product-button">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ORDNUNG -->
+
+<section class="section" id="ordnung">
+
+    <h2 class="section-title">
+        🧺 Ordnung
+    </h2>
+
+    <p class="section-subtitle">
+        Mehr Übersicht und weniger Chaos im Alltag.
+    </p>
+
+    <div class="products">
+
+        <article class="product">
+            <div class="product-icon">🖤</div>
+            <h3>Organizer für unter die Spüle</h3>
+            <p>
+                Mehr Stauraum und bessere Übersicht auf kleinem Raum.
+            </p>
+            <a href="#"
+               class="product-button">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+        <article class="product">
+            <div class="product-icon">🧹</div>
+            <h3>Besenhalter</h3>
+            <p>
+                Praktische Aufbewahrung für Besen und Mopps.
+            </p>
+            <a href="#"
+               class="product-button">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+        <article class="product">
+            <div class="product-icon">📅</div>
+            <h3>Wochenplaner</h3>
+            <p>
+                Aufgaben und Termine übersichtlich im Blick behalten.
+            </p>
+            <a href="#"
+               class="product-button">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- KÜCHE -->
+
+<section class="section" id="kueche">
+
+    <h2 class="section-title">
+        🍳 Küche
+    </h2>
+
+    <p class="section-subtitle">
+        Clevere Helfer zum Kochen, Aufbewahren und Organisieren.
+    </p>
+
+    <div class="products">
+
+        <article class="product">
+            <div class="product-icon">🍞</div>
+            <h3>Klappbarer Brotschneider</h3>
+            <p>
+                Praktisch schneiden und anschließend platzsparend
+                zusammenklappen.
+            </p>
+            <a href="#"
+               class="product-button">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+        <article class="product">
+            <div class="product-icon">🥕</div>
+            <h3>Gemüsetaxi</h3>
+            <p>
+                Geschnittenes Gemüse bequem aufnehmen und transportieren.
+            </p>
+            <a href="#"
+               class="product-button">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+        <article class="product">
+            <div class="product-icon">🫙</div>
+            <h3>6-in-1 Glasöffner</h3>
+            <p>
+                Praktischer Küchenhelfer für verschiedene Verschlüsse.
+            </p>
+            <a href="#"
+               class="product-button">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- CLEVERER ALLTAG -->
+
+<section class="section" id="alltag">
+
+    <h2 class="section-title">
+        💡 Cleverer Alltag
+    </h2>
+
+    <p class="section-subtitle">
+        Interessante Produkte und kleine Ideen für ein angenehmeres Zuhause.
+    </p>
+
+    <div class="products">
+
+        <article class="product">
+            <div class="product-icon">📺</div>
+            <h3>Technik fürs Zuhause</h3>
+            <p>
+                Praktische Technik für Unterhaltung und Komfort.
+            </p>
+            <a href="#"
+               class="product-button">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+        <article class="product">
+            <div class="product-icon">🤖</div>
+            <h3>Cleverer Haushaltshelfer</h3>
+            <p>
+                Technik, die verschiedene Aufgaben im Haushalt unterstützen kann.
+            </p>
+            <a href="#"
+               class="product-button">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+        <article class="product">
+            <div class="product-icon">✨</div>
+            <h3>Kleine Alltagshelfer</h3>
+            <p>
+                Interessante Entdeckungen, die den Alltag ein bisschen angenehmer machen.
+            </p>
+            <a href="#"
+               class="product-button">
+                🛒 Empfehlung ansehen
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- DLECTABI TIPP -->
+
+<section class="section">
+
+    <div class="tip">
+
+        <h2>💡 DLECTABI-Tipp</h2>
+
+        <p>
+            Nicht alles, was praktisch aussieht, muss gleich gekauft werden.
+            Wir zeigen dir Produkte, die interessante Lösungen für kleine
+            Alltagsprobleme bieten.
+        </p>
+
+        <strong>
+            Das Leben ein bisschen angenehmer. ✨
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- ÜBER DLECTABI -->
+
+<section class="section">
+
+    <div class="about">
+
+        <h2>✨ Über DLECTABI</h2>
+
+        <p>
+            DLECTABI steht für Ideen, die das Leben ein bisschen angenehmer machen.
+        </p>
+
+        <p>
+            Wir entdecken praktische Haushaltshelfer, clevere Ordnungs-Ideen,
+            Küchenprodukte und kleine Lösungen für den Alltag.
+        </p>
+
+        <p>
+            Nicht komplizierter. Einfach ein bisschen angenehmer. 💚
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>DLECTABI ✨</strong>
+
+    <p>
+        Das Leben ein bisschen angenehmer.
+    </p>
+
+    <div class="affiliate">
+
+        <strong>Werbung / Affiliate-Hinweis:</strong><br>
+
+        Einige Links auf dieser Seite sind Affiliate-Links.
+        Wenn du über einen solchen Link einkaufst, erhalten wir
+        möglicherweise eine Provision. Für dich entstehen dadurch
+        keine zusätzlichen Kosten.
+
+        <br><br>
+
+        Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.
+
+    </div>
+
+</footer>
+
+</body>
+</html>
